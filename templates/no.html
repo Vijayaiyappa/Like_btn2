@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <link rel="stylesheet" href={% static 'likes.js' %}>
+    </head>
+    <body>
+        
+        <form class="likerdisliker" >
+     {% csrf_token %}
+      <div class="likes_dislike" >
+       
+  <button class=" {% if auth %} {% if f_id in like_post_id %} color1 1 {% else %} 0 {% endif %} {% endif %} lkdk likbtn_new" value={{f_id}}><i class="fas fa-thumbs-up"></i><p class="lkdk">{{f_likecount}}</P></button>
+    <!--  <button class="lkdk up    add1 color{{like1}}" value="like"  id="{{f_id}}"><i class="fas fa-thumbs-up"></i><p class="lkdk">10k</P></button>
+     <button class="add2 lkdk  up color{{dislike1}}" value="dislike" id="{{f_id}}"><i class="fas fa-thumbs-down"></i><p class="lkdk">5k</P></button>
+     -->
+    </div>
+	</form>
+    </body>
+</html>
